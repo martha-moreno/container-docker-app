@@ -1,9 +1,5 @@
-build: 
-  docker: 
+build:
+  docker:
     web: Dockerfile
 run:
-  web: npm run start
-release:
-  image: web
-  command:
-    - npm run migrate up
+  web: bundle exec puma -C config/puma.rb
